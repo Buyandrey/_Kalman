@@ -24,35 +24,39 @@ using strmatr = vector<vector<double>>;
 class Matrix {
 
 public:
-	Matrix();
-	Matrix(const size_t n, const size_t m);
 
+	Matrix(const size_t n, const size_t m);
+	Matrix(const strmatr& str);
 	size_t Get_n()const;
 	size_t Get_m()const;
-
-	void Set_n(const size_t& n);
-	void Set_m(const size_t& m);
-
+	vector<double> Get_Column(const size_t& i);
+	vector<double> Get_Str(const size_t& i);
 	vector<vector<double>> Get_Matrix()const;
 	void Set_Matrix(const vector<vector<double>>& data);
-
-	void T(Matrix& M);
-
+	void Insert(const double& v, const size_t& i, const size_t& j);
 	void PrintMatrix();
-
 	void operator=(const Matrix& rhs);
 
-private:
-
-
+protected:
+	
 	vector<vector<double>> _M;
 	const size_t _n;
 	const size_t _m;
 
 };
 
-Matrix operator+(const Matrix& lhs, const Matrix& rhs);
+double ReturnSumOfMultiply(const vector<double>& a, const vector<double>& b);
+Matrix operator*(const double& value, const Matrix& m);
+Matrix operator*(const Matrix& m,   const double& value);
 
-//Matrix operator=(Matrix& lhs, const Matrix& rhs);
+Matrix operator+(const Matrix& lhs, const Matrix& rhs);
 Matrix operator-(const Matrix& lhs, const Matrix& rhs);
+ostream& operator << (ostream& os, const vector<double>& r);
+
+Matrix operator*(Matrix& lhs, Matrix& rhs);
+
+//template<typename V>
+//Matrix operator*(const V& lhs, const Matrix& rhs);
+
+
 //Matrix operator*(const Matrix& lhs, const Matrix& rhs);
