@@ -10,7 +10,7 @@ using strmatr = vector<vector<double>>;											   // Синоним для вектора вект
 																				   //
 void RESIZEvv(strmatr& vv, const size_t& m1, const size_t& n2);					   // Функция которая принимает по ссылке матрицу-строку и меняет её размер (меняет и размер строки и размер столбца).
 																				   //
-class matrix {																	   // /*	начало класса		*/
+class matrix {																	   // /*	начало класса		    */
 public:																			   //
 	matrix(const strmatr& str);													   // Конструктор, позволяющий создавать объект matrix следующим образом: matrix m(	{  {0,1}, {1,2}, {3,4}, {4,5}  }	); // матрица 4 на 2.
 	matrix();																	   // Конструктор, позволяющий создавать объект matrix следующим образом: matrix m;
@@ -39,13 +39,13 @@ private:																		   //
 																				   //
 };																				   //  /*	конец класса			*/
 																				   //
-ostream& operator << (ostream& os, const vector<double>& r);					   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА вывода вектора
-ostream& operator << (ostream& os, const strmatr& r);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА вывода матрицы-строки												 // Чтото из- этго надо убрать, наверное.
-ostream& operator << (ostream& os, const matrix& m);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА вывода матрицы 														 //
-matrix operator*(const double& value, const matrix& M);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  * между матрицоы и числом
-matrix operator*(const matrix& M, const double& value);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  * между числом и матрицой
-matrix operator*(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  * между матрицей и матрицей
-matrix operator/(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  / между матрицей и матрицей
-matrix operator+(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  + между матрицей и матрицей
-matrix operator-(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  - между матрицей и матрицей
-matrix Transponierte(const matrix& M);											   // ОПЕРАЦИЯ ТРАНСПОНИРВОАНИЯ МАТРИЦЫ
+ostream& operator << (ostream& os, const vector<double>& r);					   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА вывода вектора.
+ostream& operator << (ostream& os, const strmatr& r);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА вывода матрицы-строки.												     // Что-то из этого надо убрать, наверное.
+ostream& operator << (ostream& os, const matrix& m);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА вывода матрицы. 														 //
+matrix operator*(const double& value, const matrix& M);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  * между матрицоы и числом.
+matrix operator*(const matrix& M, const double& value);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  * между числом и матрицой.
+matrix operator*(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  * между матрицей и матрицей.
+matrix operator/(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  / между матрицей и матрицей.
+matrix operator+(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  + между матрицей и матрицей.
+matrix operator-(const matrix& lhs, const matrix& rhs);							   // ПЕРЕОПРЕДЕЛЕНИЕ ОПЕРАТОРА  - между матрицей и матрицей.
+matrix Transponierte(const matrix& M);											   //				  ОПЕРАЦИЯ транспонирования матрицы.

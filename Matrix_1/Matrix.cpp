@@ -10,12 +10,12 @@ void RESIZEvv(vector<vector<double>>& vv, const size_t& m1, const size_t& n2) {
 matrix :: matrix(const strmatr& str) {
 		_M = str;
 	}
-matrix ::matrix() {}
-double matrix::Get_Element(const size_t& i, const size_t& j)const {
+matrix :: matrix() {}
+double matrix :: Get_Element(const size_t& i, const size_t& j)const {
 		return _M.at(i).at(j);
 	}
-pair<size_t, size_t> matrix::Get_MxN() const { return(make_pair(_M.size(), _M.at(0).size())); }
-void matrix:: PrintMatrix() {
+pair<size_t, size_t> matrix :: Get_MxN() const { return(make_pair(_M.size(), _M.at(0).size())); }
+void matrix :: PrintMatrix() {
 		for (size_t i = 0; i < Get_MxN().first; i++) {
 			for (size_t j = 0; j < Get_MxN().second; j++)
 				cout << setw(4) << setfill(' ') << _M.at(i).at(j) << ' ';
@@ -23,7 +23,7 @@ void matrix:: PrintMatrix() {
 		}
 		cout << endl;
 	}
-double matrix::Determinant() const {
+double matrix :: Determinant() const {
 		{
 			size_t m = Get_MxN().first;
 			size_t n = Get_MxN().second;
@@ -58,7 +58,7 @@ double matrix::Determinant() const {
 		}
 	}
 
-matrix matrix::PreMinor(const size_t& row, const size_t& col) const
+matrix matrix :: PreMinor(const size_t& row, const size_t& col) const
 	{
 		//возвращает матрицу минора(?)
 		size_t size_minor = _M.size() - 1;
@@ -80,7 +80,7 @@ matrix matrix::PreMinor(const size_t& row, const size_t& col) const
 		matrix newMatrix(vv);
 		return newMatrix;
 	}
-matrix matrix::Inverted(const double& D) const {
+matrix matrix :: Inverted(const double& D) const {
 		size_t size = _M.size();
 		if ((size - 1) <= 0) {
 			throw invalid_argument("Matrx less or equal then 0");
@@ -99,7 +99,7 @@ matrix matrix::Inverted(const double& D) const {
 		return (1 / D) * newMatrix;
 	}
 
-vector<double> matrix:: Get_Line(const size_t& i)const {
+vector<double> matrix :: Get_Line(const size_t& i)const {
 		size_t size = Get_MxN().second;
 		if (i > size)
 			throw invalid_argument("Can't cout this line, may be out of range !");
@@ -107,7 +107,7 @@ vector<double> matrix:: Get_Line(const size_t& i)const {
 			return _M.at(i);
 		}
 	}
-vector<double> matrix::Get_Column(const size_t& i)const {
+vector<double> matrix :: Get_Column(const size_t& i)const {
 		vector<double> Column;
 		size_t size = Get_MxN().first;
 		Column.resize(size);
@@ -121,7 +121,7 @@ vector<double> matrix::Get_Column(const size_t& i)const {
 			return Column;
 		}
 	}
-double matrix:: det4() const {
+double matrix :: det4() const {
 		strmatr m03, m13, m23, m33;
 		m03 = {
 			{Get_Element(1,0),Get_Element(1,1),Get_Element(1,2)},

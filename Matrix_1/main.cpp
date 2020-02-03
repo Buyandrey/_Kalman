@@ -152,7 +152,7 @@ int main()
 							{ 3100 },
 							{ 282 },
 							{ 122 } });
-	//						  (X0,   Y0,   Vx,  Vy, dT, ax, ay, Ym)
+	//						  (X0,   Y0,   Vx,  Vy,  dT,ax,ay,  Ym)
 	Result = countCurrentState(4000, 3000, 280, 120, 1, 2, 1.5, Observation);
 	Result.PrintMatrix();
 	return 0;
