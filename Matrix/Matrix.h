@@ -60,3 +60,4 @@ Matrix operator*(Matrix& lhs, Matrix& rhs);
 
 
 //Matrix operator*(const Matrix& lhs, const Matrix& rhs);
+4
