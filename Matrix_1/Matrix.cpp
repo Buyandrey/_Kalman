@@ -65,7 +65,7 @@ matrix matrix :: PreMinor(const size_t& row, const size_t& col) const
 		strmatr vv;
 		RESIZEvv(vv, size_minor, size_minor);
 
-		int i, j, in, jn;
+		size_t i, j, in, jn;
 
 		for (i = 0, in = 0; i < size_minor + 1; i++) {
 			if (i != row) {
